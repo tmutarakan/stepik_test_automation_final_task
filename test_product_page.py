@@ -17,7 +17,7 @@ links = ["http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?pr
          ]
 
 
-@pytest.mark.parametrize('link', links)
+'''@pytest.mark.parametrize('link', links)
 def test_guest_can_add_product_to_basket(browser, link: str):
     # link = "http://selenium1py.pythonanywhere.com/catalogue/the-shellcoders-handbook_209/?promo=newYear"
     # link = 'http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=newYear2019'
@@ -29,3 +29,27 @@ def test_guest_can_add_product_to_basket(browser, link: str):
     page.match_product_price()
     # from time import sleep
     # sleep(30)
+    '''
+
+
+def test_guest_cant_see_success_message_after_adding_product_to_basket(browser):
+    link = 'http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/'
+    page = ProductPage(browser, link)
+    page.open()
+    page.add_product_to_basket()
+    page.should_not_be_success_message()
+
+
+def test_guest_cant_see_success_message(browser):
+    link = 'http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/'
+    page = ProductPage(browser, link)
+    page.open()
+    page.should_not_be_success_message()
+
+
+def test_message_disappeared_after_adding_product_to_basket(browser):
+    link = 'http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/'
+    page = ProductPage(browser, link)
+    page.open()
+    page.add_product_to_basket()
+    page.should_be_disappear_success_message()
