@@ -1,2 +1,2 @@
-# stepik_test_automation_final_task
-section4
+# Финальное задание
+С файлом `__init__.py` не работает импорт модулей.
