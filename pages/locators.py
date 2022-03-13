@@ -10,7 +10,7 @@ class BasePageLocators:
 
 class BasketPageLocator:
     PRODUCT_IN_BASKET = (By.CSS_SELECTOR, ".basket-title")
-    BASKET_IS_EMPTY = (By.CSS_SELECTOR, "#content_inner p")
+    BASKET_IS_EMPTY = (By.CSS_SELECTOR, "#content_inner > p")
 
 
 class LoginPageLocators:
