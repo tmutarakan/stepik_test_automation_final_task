@@ -9,4 +9,3 @@ class BasketPage(BasePage):
 
     def should_be_basket_is_empty(self):
         assert self.is_element_present(*BasketPageLocator.BASKET_IS_EMPTY)
-        # print(self.browser.find_element(*BasketPageLocator.BASKET_IS_EMPTY).text)
